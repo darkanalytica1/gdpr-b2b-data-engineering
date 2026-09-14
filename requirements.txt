@@ -1,0 +1,6 @@
+# Runtime dependencies: none. The gdpr_pipeline package uses only the
+# Python 3.11+ standard library, on purpose, so it can be read and run
+# anywhere without a dependency audit.
+#
+# Development / test dependency:
+pytest>=7.4
