@@ -24,21 +24,9 @@ Compliance here is not a document that sits beside the pipeline. It is enforced
 at each stage, so an unlawful record cannot flow through and an erased record
 cannot come back.
 
-```mermaid
-flowchart TB
-    A[Third-party record] --> B{Ingest gate<br/>provenance + legal basis?}
-    B -->|missing| R[Rejected, with reason]
-    B -->|present| C{On the suppression list?<br/>checked by hash}
-    C -->|yes| S[Held back]
-    C -->|no| D{Tombstoned by erasure?}
-    D -->|yes| S
-    D -->|no| E[Warehouse]
-    E --> F[Retention engine<br/>expire fields past their TTL]
-    F --> G[Usable, defensible record]
-    style G fill:#1f9d55,color:#fff
-    style R fill:#c0392b,color:#fff
-    style S fill:#e67e22,color:#fff
-```
+<p align="center">
+  <img src="assets/pipeline.gif" alt="The compliant pipeline, enforced at every stage" width="900">
+</p>
 
 The nightly re-ingest runs this same gauntlet, which is why a suppression or an
 erasure survives it instead of being quietly undone.
