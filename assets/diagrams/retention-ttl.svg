@@ -23,7 +23,7 @@
     @media (prefers-reduced-motion: reduce) { * { animation: none !important } }
   </style>
   <rect width="1200" height="430" fill="#F5F7FA"/>
-  <text x="48" y="52" class="mono" font-size="12" letter-spacing="1.2" fill="#6B7688">FIG. 3  ·  RETENTION ENGINE, DEFAULT TTL PER FIELD CLASS</text>
+  <text x="48" y="52" class="mono" font-size="12" letter-spacing="1.2" fill="#5F6B7C">FIG. 3  ·  RETENTION ENGINE, DEFAULT TTL PER FIELD CLASS</text>
   <text x="48" y="94" class="display" font-size="26" font-weight="600" fill="#0E1726">Fields on the same record expire at different times</text>
 
   <!-- grid -->
@@ -36,7 +36,7 @@
     <line x1="1000" y1="126" x2="1000" y2="364"/>
     <line x1="260" y1="364" x2="1000" y2="364"/>
   </g>
-  <g class="mono" font-size="12" fill="#6B7688" text-anchor="middle">
+  <g class="mono" font-size="12" fill="#5F6B7C" text-anchor="middle">
     <text x="260" y="384">0</text><text x="352.5" y="384">3</text><text x="445" y="384">6</text>
     <text x="630" y="384">12</text><text x="815" y="384">18</text><text x="1000" y="384">24 months</text>
   </g>
@@ -77,5 +77,5 @@
     <circle cx="260" cy="120" r="4" fill="#8A6A1F"/>
   </g>
 
-  <text x="48" y="414" class="sans" font-size="13" fill="#6B7688">Defaults from gdpr_pipeline/retention.py. An expired field is set to None; the TTLs are an editable starting point, not a legal ruling.</text>
+  <text x="48" y="414" class="sans" font-size="13" fill="#5F6B7C">Defaults from gdpr_pipeline/retention.py. An expired field is set to None; the TTLs are an editable starting point, not a legal ruling.</text>
 </svg>
