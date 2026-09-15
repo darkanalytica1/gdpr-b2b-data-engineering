@@ -2,77 +2,77 @@
   <title id="t">Erasure that survives re-ingest</title>
   <desc id="d">A nightly job re-ingests facts from a public source register. A tombstone filter, written when an erasure request is honoured, drops the erased identifier before it reaches the ingest gate, while other records continue to the warehouse.</desc>
   <style>
-    .serif { font-family: 'Source Serif 4', 'Source Serif Pro', Georgia, 'Times New Roman', serif; }
+    .display { font-family: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; letter-spacing: -0.01em; }
     .sans  { font-family: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; }
     .mono  { font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
     .flow  { stroke-dasharray: 6 6; animation: flow 3s linear infinite; }
     @keyframes flow { to { stroke-dashoffset: -48 } }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important } }
   </style>
-  <rect width="1200" height="480" fill="#F6F4EF"/>
-  <text x="48" y="52" class="mono" font-size="12" letter-spacing="1.2" fill="#7A8088">FIG. 2  ·  THE ZOMBIE RECORD PROBLEM AND THE TOMBSTONE PATTERN</text>
-  <text x="48" y="94" class="serif" font-size="26" font-weight="600" fill="#1B1F24">An erasure has to survive tomorrow's re-ingest</text>
+  <rect width="1200" height="480" fill="#F5F7FA"/>
+  <text x="48" y="52" class="mono" font-size="12" letter-spacing="1.2" fill="#6B7688">FIG. 2  ·  THE ZOMBIE RECORD PROBLEM AND THE TOMBSTONE PATTERN</text>
+  <text x="48" y="94" class="display" font-size="26" font-weight="600" fill="#0E1726">An erasure has to survive tomorrow's re-ingest</text>
 
-  <path class="flow" d="M236,230 H1054" fill="none" stroke="#5B7083" stroke-width="1.75"/>
+  <path class="flow" d="M236,230 H1054" fill="none" stroke="#3E5C76" stroke-width="1.75"/>
 
-  <g class="sans" font-size="14" fill="#1B1F24">
-    <rect x="48" y="170" width="188" height="120" rx="4" fill="#fff" stroke="#DAD6CC" stroke-width="1.5"/>
-    <text x="64" y="202" class="mono" font-size="12" letter-spacing="1" fill="#7A8088">01  SOURCE REGISTER</text>
+  <g class="sans" font-size="14" fill="#0E1726">
+    <rect x="48" y="170" width="188" height="120" rx="4" fill="#fff" stroke="#D8DEE6" stroke-width="1.5"/>
+    <text x="64" y="202" class="mono" font-size="12" letter-spacing="1" fill="#6B7688">01  SOURCE REGISTER</text>
     <text x="64" y="258">public record, never</text>
     <text x="64" y="277">erased at the source</text>
 
-    <rect x="276" y="170" width="188" height="120" rx="4" fill="#fff" stroke="#1F3A5F" stroke-width="1.5"/>
-    <rect x="276" y="170" width="188" height="3" fill="#1F3A5F"/>
-    <text x="292" y="202" class="mono" font-size="12" letter-spacing="1" fill="#1F3A5F">02  NIGHTLY RE-INGEST</text>
+    <rect x="276" y="170" width="188" height="120" rx="4" fill="#fff" stroke="#0B2545" stroke-width="1.5"/>
+    <rect x="276" y="170" width="188" height="3" fill="#0B2545"/>
+    <text x="292" y="202" class="mono" font-size="12" letter-spacing="1" fill="#0B2545">02  NIGHTLY RE-INGEST</text>
     <text x="292" y="258">the same facts come</text>
     <text x="292" y="277">back on every run</text>
 
-    <rect x="504" y="170" width="188" height="120" rx="4" fill="#fff" stroke="#A33A2B" stroke-width="1.5"/>
-    <rect x="504" y="170" width="188" height="3" fill="#A33A2B"/>
-    <text x="520" y="202" class="mono" font-size="12" letter-spacing="1" fill="#A33A2B">03  TOMBSTONE FILTER</text>
+    <rect x="504" y="170" width="188" height="120" rx="4" fill="#fff" stroke="#8A6A1F" stroke-width="1.5"/>
+    <rect x="504" y="170" width="188" height="3" fill="#8A6A1F"/>
+    <text x="520" y="202" class="mono" font-size="12" letter-spacing="1" fill="#8A6A1F">03  TOMBSTONE FILTER</text>
     <text x="520" y="258">drops identifiers whose</text>
     <text x="520" y="277">hash is tombstoned</text>
 
-    <rect x="732" y="170" width="188" height="120" rx="4" fill="#fff" stroke="#1F3A5F" stroke-width="1.5"/>
-    <rect x="732" y="170" width="188" height="3" fill="#1F3A5F"/>
-    <text x="748" y="202" class="mono" font-size="12" letter-spacing="1" fill="#1F3A5F">04  INGEST GATE</text>
+    <rect x="732" y="170" width="188" height="120" rx="4" fill="#fff" stroke="#0B2545" stroke-width="1.5"/>
+    <rect x="732" y="170" width="188" height="3" fill="#0B2545"/>
+    <text x="748" y="202" class="mono" font-size="12" letter-spacing="1" fill="#0B2545">04  INGEST GATE</text>
     <text x="748" y="258">provenance, fields,</text>
     <text x="748" y="277">suppression lookup</text>
 
-    <rect x="960" y="170" width="188" height="120" rx="4" fill="#fff" stroke="#1F3A5F" stroke-width="1.5"/>
-    <rect x="960" y="170" width="188" height="3" fill="#1F3A5F"/>
-    <text x="976" y="202" class="mono" font-size="12" letter-spacing="1" fill="#1F3A5F">05  WAREHOUSE</text>
+    <rect x="960" y="170" width="188" height="120" rx="4" fill="#fff" stroke="#0B2545" stroke-width="1.5"/>
+    <rect x="960" y="170" width="188" height="3" fill="#0B2545"/>
+    <text x="976" y="202" class="mono" font-size="12" letter-spacing="1" fill="#0B2545">05  WAREHOUSE</text>
     <text x="976" y="258">periodic sweep removes</text>
     <text x="976" y="277">anything that slipped in</text>
   </g>
 
   <g class="mono" font-size="12">
-    <line x1="512" y1="290" x2="512" y2="322" stroke="#A33A2B" stroke-width="1.5" stroke-opacity=".7"/>
-    <text x="520" y="320" fill="#A33A2B">blocked</text>
+    <line x1="512" y1="290" x2="512" y2="322" stroke="#8A6A1F" stroke-width="1.5" stroke-opacity=".7"/>
+    <text x="520" y="320" fill="#8A6A1F">blocked</text>
   </g>
 
   <!-- erasure request -->
-  <rect x="504" y="360" width="644" height="84" rx="4" fill="#fff" stroke="#DAD6CC" stroke-width="1.5"/>
-  <text x="524" y="390" class="mono" font-size="12" letter-spacing="1" fill="#7A8088">ERASURE REQUEST  ·  ARTICLE 17</text>
-  <text x="524" y="414" class="sans" font-size="14" fill="#1B1F24">delete the record, then write a salted-hash tombstone that is additive</text>
-  <text x="524" y="433" class="sans" font-size="14" fill="#1B1F24">and stored outside the tables that re-ingest rebuilds</text>
-  <path d="M640,360 V296" fill="none" stroke="#5B7083" stroke-width="1.5" stroke-dasharray="4 4"/>
-  <path d="M635,302 L640,292 L645,302" fill="none" stroke="#5B7083" stroke-width="1.5"/>
-  <text x="648" y="336" class="mono" font-size="12" fill="#7A8088">writes</text>
-  <path d="M1054,360 V296" fill="none" stroke="#5B7083" stroke-width="1.5" stroke-dasharray="4 4"/>
-  <path d="M1049,302 L1054,292 L1059,302" fill="none" stroke="#5B7083" stroke-width="1.5"/>
-  <text x="1062" y="336" class="mono" font-size="12" fill="#7A8088">deletes</text>
+  <rect x="504" y="360" width="644" height="84" rx="4" fill="#fff" stroke="#D8DEE6" stroke-width="1.5"/>
+  <text x="524" y="390" class="mono" font-size="12" letter-spacing="1" fill="#6B7688">ERASURE REQUEST  ·  ARTICLE 17</text>
+  <text x="524" y="414" class="sans" font-size="14" fill="#0E1726">delete the record, then write a salted-hash tombstone that is additive</text>
+  <text x="524" y="433" class="sans" font-size="14" fill="#0E1726">and stored outside the tables that re-ingest rebuilds</text>
+  <path d="M640,360 V296" fill="none" stroke="#3E5C76" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <path d="M635,302 L640,292 L645,302" fill="none" stroke="#3E5C76" stroke-width="1.5"/>
+  <text x="648" y="336" class="mono" font-size="12" fill="#6B7688">writes</text>
+  <path d="M1054,360 V296" fill="none" stroke="#3E5C76" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <path d="M1049,302 L1054,292 L1059,302" fill="none" stroke="#3E5C76" stroke-width="1.5"/>
+  <text x="1062" y="336" class="mono" font-size="12" fill="#6B7688">deletes</text>
 
   <!-- counterfactual note -->
-  <text x="48" y="384" class="mono" font-size="12" letter-spacing="1" fill="#7A8088">WITHOUT A TOMBSTONE</text>
-  <text x="48" y="410" class="sans" font-size="14" fill="#4A5058">the erased record returns on the next run:</text>
-  <text x="48" y="430" class="sans" font-size="14" fill="#4A5058">erased and un-erased on a 24-hour cycle.</text>
+  <text x="48" y="384" class="mono" font-size="12" letter-spacing="1" fill="#6B7688">WITHOUT A TOMBSTONE</text>
+  <text x="48" y="410" class="sans" font-size="14" fill="#3D4A5C">the erased record returns on the next run:</text>
+  <text x="48" y="430" class="sans" font-size="14" fill="#3D4A5C">erased and un-erased on a 24-hour cycle.</text>
 
   <!-- travelling records -->
-  <circle r="6" fill="#1F3A5F" stroke="#fff" stroke-width="1.5">
+  <circle r="6" fill="#0B2545" stroke="#fff" stroke-width="1.5">
     <animateMotion dur="6s" repeatCount="indefinite" path="M236,230 H1054"/>
   </circle>
-  <circle r="6" fill="#A33A2B" stroke="#fff" stroke-width="1.5">
+  <circle r="6" fill="#8A6A1F" stroke="#fff" stroke-width="1.5">
     <animateMotion dur="6s" begin="-3s" repeatCount="indefinite" path="M236,230 H512 V322" keyPoints="0;1;1" keyTimes="0;0.47;1" calcMode="linear"/>
     <animate attributeName="opacity" dur="6s" begin="-3s" repeatCount="indefinite" values="1;1;0;0" keyTimes="0;0.5;0.6;1"/>
   </circle>

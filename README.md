@@ -4,9 +4,9 @@
 
 <p align="center">
   <a href="https://github.com/darkanalytica1/gdpr-b2b-data-engineering/actions/workflows/tests.yml"><img src="https://github.com/darkanalytica1/gdpr-b2b-data-engineering/actions/workflows/tests.yml/badge.svg" alt="tests"></a>
-  <img src="https://img.shields.io/badge/python-3.11%2B-1F3A5F" alt="Python 3.11+">
-  <img src="https://img.shields.io/badge/dependencies-standard%20library-5B7083" alt="Standard library only">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-5B7083" alt="MIT licence"></a>
+  <img src="https://img.shields.io/badge/python-3.11%2B-0B2545" alt="Python 3.11+">
+  <img src="https://img.shields.io/badge/dependencies-standard%20library-3E5C76" alt="Standard library only">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-3E5C76" alt="MIT licence"></a>
 </p>
 
 # GDPR B2B Data Engineering
