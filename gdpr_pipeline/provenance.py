@@ -103,8 +103,8 @@ def validate_provenance(prov: Provenance | None) -> list[ProvenanceError]:
     """Validate a Provenance instance and return a list of structured errors.
 
     An empty list means the provenance is valid. This function never raises;
-    it is the pure check that both Provenance.__post_init__ and the ingest
-    gate call, so the two never drift out of sync.
+    it is the single check the ingest gate (and any other caller) relies on,
+    so validation rules never drift between call sites.
     """
 
     errors: list[ProvenanceError] = []

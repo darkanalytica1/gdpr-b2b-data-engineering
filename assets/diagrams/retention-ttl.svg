@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 430" width="1200" height="430" role="img" aria-labelledby="t d">
+  <title id="t">Retention per field class</title>
+  <desc id="d">Four field classes with default time-to-live values: derived 90 days, behavioural 180 days, contact 365 days, identity 730 days. A time cursor moves across 24 months and each class expires when the cursor passes its TTL.</desc>
+  <style>
+    .serif { font-family: 'Source Serif 4', 'Source Serif Pro', Georgia, 'Times New Roman', serif; }
+    .sans  { font-family: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; }
+    .mono  { font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .cursor { opacity: 0; animation: sweep 10s linear infinite; }
+    .k, .x { opacity: 0; animation-duration: 10s; animation-iteration-count: infinite; animation-timing-function: linear; }
+    .kd { animation-name: keepD }  .xd { animation-name: expD }
+    .kb { animation-name: keepB }  .xb { animation-name: expB }
+    .kc { animation-name: keepC }  .xc { animation-name: expC }
+    .ki { animation-name: keepI }  .xi { animation-name: expI }
+    @keyframes sweep { 0% { opacity: 1; transform: translateX(0) } 90% { opacity: 1; transform: translateX(740px) } 100% { opacity: 1; transform: translateX(740px) } }
+    @keyframes keepD { 0%, 11.2% { opacity: 1 } 11.3%, 100% { opacity: 0 } }
+    @keyframes expD  { 0%, 11.2% { opacity: 0 } 11.3%, 100% { opacity: 1 } }
+    @keyframes keepB { 0%, 22.4% { opacity: 1 } 22.5%, 100% { opacity: 0 } }
+    @keyframes expB  { 0%, 22.4% { opacity: 0 } 22.5%, 100% { opacity: 1 } }
+    @keyframes keepC { 0%, 44.9% { opacity: 1 } 45%, 100% { opacity: 0 } }
+    @keyframes expC  { 0%, 44.9% { opacity: 0 } 45%, 100% { opacity: 1 } }
+    @keyframes keepI { 0%, 89.9% { opacity: 1 } 90%, 100% { opacity: 0 } }
+    @keyframes expI  { 0%, 89.9% { opacity: 0 } 90%, 100% { opacity: 1 } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important } }
+  </style>
+  <rect width="1200" height="430" fill="#F6F4EF"/>
+  <text x="48" y="52" class="mono" font-size="12" letter-spacing="1.2" fill="#7A8088">FIG. 3  ·  RETENTION ENGINE, DEFAULT TTL PER FIELD CLASS</text>
+  <text x="48" y="94" class="serif" font-size="26" font-weight="600" fill="#1B1F24">Fields on the same record expire at different times</text>
+
+  <!-- grid -->
+  <g stroke="#DAD6CC" stroke-width="1">
+    <line x1="260" y1="126" x2="260" y2="364"/>
+    <line x1="352.5" y1="126" x2="352.5" y2="364" stroke-dasharray="2 4"/>
+    <line x1="445" y1="126" x2="445" y2="364" stroke-dasharray="2 4"/>
+    <line x1="630" y1="126" x2="630" y2="364" stroke-dasharray="2 4"/>
+    <line x1="815" y1="126" x2="815" y2="364" stroke-dasharray="2 4"/>
+    <line x1="1000" y1="126" x2="1000" y2="364"/>
+    <line x1="260" y1="364" x2="1000" y2="364"/>
+  </g>
+  <g class="mono" font-size="12" fill="#7A8088" text-anchor="middle">
+    <text x="260" y="384">0</text><text x="352.5" y="384">3</text><text x="445" y="384">6</text>
+    <text x="630" y="384">12</text><text x="815" y="384">18</text><text x="1000" y="384">24 months</text>
+  </g>
+
+  <!-- rows: label, bar to TTL, expired remainder -->
+  <g class="sans" font-size="13" fill="#4A5058">
+    <text x="48" y="148" class="mono" font-size="12" letter-spacing="1" fill="#1B1F24">DERIVED  ·  90 d</text>
+    <text x="48" y="166">scores, segment labels</text>
+    <rect x="260" y="140" width="92.5" height="22" rx="2" fill="#E8EDF3" stroke="#1F3A5F" stroke-width="1.5"/>
+    <rect x="352.5" y="140" width="647.5" height="22" rx="2" fill="none" stroke="#DAD6CC" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+    <text x="48" y="208" class="mono" font-size="12" letter-spacing="1" fill="#1B1F24">BEHAVIOURAL  ·  180 d</text>
+    <text x="48" y="226">opens, visits, replies</text>
+    <rect x="260" y="200" width="185" height="22" rx="2" fill="#E8EDF3" stroke="#1F3A5F" stroke-width="1.5"/>
+    <rect x="445" y="200" width="555" height="22" rx="2" fill="none" stroke="#DAD6CC" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+    <text x="48" y="268" class="mono" font-size="12" letter-spacing="1" fill="#1B1F24">CONTACT  ·  365 d</text>
+    <text x="48" y="286">email, phone</text>
+    <rect x="260" y="260" width="370" height="22" rx="2" fill="#E8EDF3" stroke="#1F3A5F" stroke-width="1.5"/>
+    <rect x="630" y="260" width="370" height="22" rx="2" fill="none" stroke="#DAD6CC" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+    <text x="48" y="328" class="mono" font-size="12" letter-spacing="1" fill="#1B1F24">IDENTITY  ·  730 d</text>
+    <text x="48" y="346">company name, reg. no.</text>
+    <rect x="260" y="320" width="740" height="22" rx="2" fill="#E8EDF3" stroke="#1F3A5F" stroke-width="1.5"/>
+  </g>
+
+  <!-- status column -->
+  <g class="mono" font-size="13">
+    <text x="1030" y="156" class="k kd" fill="#5E7F68">keep</text><text x="1030" y="156" class="x xd" fill="#A33A2B">expire</text>
+    <text x="1030" y="216" class="k kb" fill="#5E7F68">keep</text><text x="1030" y="216" class="x xb" fill="#A33A2B">expire</text>
+    <text x="1030" y="276" class="k kc" fill="#5E7F68">keep</text><text x="1030" y="276" class="x xc" fill="#A33A2B">expire</text>
+    <text x="1030" y="336" class="k ki" fill="#5E7F68">keep</text><text x="1030" y="336" class="x xi" fill="#A33A2B">expire</text>
+  </g>
+
+  <!-- time cursor -->
+  <g class="cursor">
+    <line x1="260" y1="120" x2="260" y2="364" stroke="#A33A2B" stroke-width="1.75"/>
+    <circle cx="260" cy="120" r="4" fill="#A33A2B"/>
+  </g>
+
+  <text x="48" y="414" class="sans" font-size="13" fill="#7A8088">Defaults from gdpr_pipeline/retention.py. An expired field is set to None; the TTLs are an editable starting point, not a legal ruling.</text>
+</svg>

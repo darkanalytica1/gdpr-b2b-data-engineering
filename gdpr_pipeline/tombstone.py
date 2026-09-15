@@ -25,7 +25,7 @@ tombstone is checked at three points:
 
 A tombstone is not itself the erasure of the personal data (the fact of
 "this address must be blocked" is retained, deliberately, because it is
-the only way honour the request going forward). What is erased is the
+the only way to honour the request going forward). What is erased is the
 underlying company/contact record that carried the personal data. The
 tombstone entry itself should follow the same hashed-identifier
 principle as the suppression list, for the same reason: a tombstone
